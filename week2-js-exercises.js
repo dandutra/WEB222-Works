@@ -67,13 +67,13 @@ Modify your solution to the previous function to allow a second argument: "F" or
 and use that to determine what the scale of the value is, converting to the opposite: convert(122, "F") should return "50 C"*/
 
 //function declaration
-function convertImproved (temp, metric) {
-    if (metric == "C") {
-        return ((temp * 9/5) + 32) + " F";
-    } else if (metric === "F") {
-        return ((temp - 32) * 5/9) + " C";
-    }
-}
+// function convertImproved (temp, metric) {
+//     if (metric == "C") {
+//         return ((temp * 9/5) + 32) + " F";
+//     } else if (metric === "F") {
+//         return ((temp - 32) * 5/9) + " C";
+//     }
+// }
 
 //function expression
 // const convertImproved = function(temp, metric) {
@@ -93,4 +93,173 @@ const convertImproved = (temp, metric) => {
     }
 };
 
-console.log(convertImproved(0, "C"));
+//console.log(convertImproved(0, "C"));
+
+/* EXERCISE 5
+Function taking any number of arguments (Numbers), 
+returning true if they are all less than 50: isUnder50(1, 2, 3, 5, 4, 65) should return false
+*/
+
+//function declaration
+// function isUnder50(...numbers) {
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] >= 50) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+//function expression
+// const isUnder50 = function (...numbers) {
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] >= 50) {
+//             return false;
+//         }
+//     }
+//     return true;
+// };
+
+//Arrow function
+const isUnder50 = (...numbers) => {
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 50) {
+            return false;
+        }
+    }
+    return true;
+};
+
+//console.log(isUnder50(1, 2, 3, 50, 4, 6));
+
+/* EXERCISE 6
+Function allowing any number of arguments (Numbers), returning their sum: sum(1, 2, 3) should return 6
+*/
+
+//function declaration
+// function sum(...numbers) {
+//     let sum = 0;
+//     for (let i = 0; i < numbers.length; i++){
+//         sum += numbers[i];
+//     }
+//     return sum;
+// }
+
+// //function expression 
+// const sum = function (...numbers) {
+//     let sum = 0;
+//     for (let i = 0; i < numbers.length; i++){
+//         sum += numbers[i];
+//     }
+//     return sum;
+// };
+
+//Arrow function
+const sum = (...numbers) => {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+    }
+    return sum;
+};
+
+//console.log(sum(1, 2, 3));
+
+/* EXERCISE 7
+Function allowing any number of arguments of any type, returns true only if none of the arguments is falsy.
+allExist(true, true, 1) should return true, but allExist(1, "1", 0) should return false.
+*/
+
+// //function declaration
+// function allExist(...args) {
+//     for (let i = 0; i < args.length; i++) {
+//         if (!args[i]) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// //function expression 
+// const allExist = function (...args) {
+//     for (let i = 0; i < args.length; i++) {
+//         if (!args[i]) {
+//             return false;
+//         }
+//     }
+//     return true;    
+// };
+
+//Arrow function
+const allExist = (...args) => {
+    for (let i = 0; i < args.length; i++) {
+        if (!args[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+//console.log(allExist(1, "1", 0));
+
+/* EXERCISE 8
+Function to create a JavaScript library name generator: generateName("dog") should return "dog.js"
+*/
+
+//function declaration
+// function generateName(name) {
+//     return `${name}.js`;
+// }
+
+// //function expression 
+// const generateName = function (name) {
+//     return `${name}.js`;
+// };
+
+//Arrow function
+const generateName = name => `${name}.js`;
+
+//console.log(generateName("dog"));
+
+/* EXERCISE 9
+Function to check if a number is a multiple of 3 (returns true or false)
+*/
+
+//function declaration
+// function isMultipleOf3(num) {
+//     return (num % 3) === 0 ? true : false;
+// }
+
+// //function expression
+// const isMultipleOf3 = function(num) {
+//     return (num % 3) === 0 ? true : false;
+// };
+
+//Arrow function
+const isMultipleOf3 = num => (num % 3) === 0 ? true : false;
+
+console.log(isMultipleOf3(10));
+
+/* EXERCISE 10
+Check if a number is between two other numbers, being inclusive if the final argument is true: 
+checkBetween(66, 1, 50, true) should return false.
+*/
+
+//function declaration 
+function checkBetween(left, middle, right, isInclusive) {
+    if (isInclusive) {
+        if(middle >= left && middle <= right)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (!isInclusive) {
+        if(middle > left && middle < right) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+console.log(checkBetween(66, 1, 50, true));
