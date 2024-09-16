@@ -238,7 +238,7 @@ Function to check if a number is a multiple of 3 (returns true or false)
 //Arrow function
 const isMultipleOf3 = num => (num % 3) === 0 ? true : false;
 
-console.log(isMultipleOf3(10));
+//console.log(isMultipleOf3(10));
 
 /* EXERCISE 10
 Check if a number is between two other numbers, being inclusive if the final argument is true: 
@@ -248,18 +248,58 @@ checkBetween(66, 1, 50, true) should return false.
 //function declaration 
 function checkBetween(left, middle, right, isInclusive) {
     if (isInclusive) {
-        if(middle >= left && middle <= right)
-        {
+        if(middle >= left && middle <= right){
             return true;
-        } else {
-            return false;
         }
     } else if (!isInclusive) {
         if(middle > left && middle < right) {
             return true;
-        } else {
-            return false;
-        }
+        } 
     }
+    return false;
 }
-console.log(checkBetween(66, 1, 50, true));
+//console.log(checkBetween(66, 66, 70, true));
+
+/* EXERCISE 11
+Function to calculate the HST (13%) on a purchase amount
+*/
+
+// //function declaration 
+// function tax(value) {
+//     return value * 0.13;
+// }
+
+// //function expression
+// const tax = function(value) {
+//     return value * 0.13;
+// };
+
+//Arrow function
+const tax = value => value * 0.13;
+
+//console.log(tax(100));
+
+/* EXERCISE 12
+Function to subtract a discount % from a total. If no % is given, return the original value.
+*/
+
+// //function declaration
+// function withDiscount(total, discount = 0) {
+//     return total - (total * discount/100);
+// }
+
+// //function expression
+// const withDiscount = function(total, discount = 0) {
+//     return total - (total * discount/100);
+// };
+
+//Arrow function
+const withDiscount = (total, discount = 0) => {
+    return total - (total * discount/100);
+};
+
+console.log(withDiscount(100));
+
+/* EXERCISE 13
+Function that takes a number of seconds as a Number, returning a String formatted like "X Days, Y Hours, Z Minutes" rounded to the nearest minute.
+*/
